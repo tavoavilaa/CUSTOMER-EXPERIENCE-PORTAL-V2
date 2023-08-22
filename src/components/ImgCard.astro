@@ -1,0 +1,102 @@
+---
+import Button from "../components/Button.astro";
+export interface Props {
+  title: string;
+  text: string;
+  img: string;
+  dataBsToggle: string;
+  dataBsTarget: string;
+  backgroundColor: string;
+  hoverColor: string;
+  textColor: string;
+}
+
+const { title, text, img, dataBsToggle, dataBsTarget, backgroundColor, hoverColor, textColor } = Astro.props;
+---
+
+<button data-bs-toggle={dataBsToggle} data-bs-target={dataBsTarget}>
+<div class="position-relative imgCard">
+    <div class="px-4">
+        <img class="imgCard__img" src={img} alt="">
+    </div>
+    <div class="p-4 imgCard__description">
+        <div class="d-flex justify-content-between my-2">
+            <h5 class="fw-bold">{title}</h5>
+        </div>
+        <p>
+            {text}
+        </p>
+
+        </div>
+    </div>
+</button>
+
+
+
+<style define:vars={{ backgroundColor, hoverColor, textColor}}>
+
+    a{
+        text-decoration: none;
+    }
+
+    button{
+        background-color: transparent; 
+        border: none;
+        text-align: inherit;
+    }
+
+    .imgCard:hover .imgCard__img{
+        padding: 15px;
+        transition: all .3s ease;
+        box-sizing: border-box;
+    }
+    @media (max-width: 991.98px){
+        .imgCard:hover .imgCard__img{
+            padding: 0px;
+            transition: all .3s ease;
+            box-sizing: border-box;
+        }
+    }
+    .imgCard:hover{
+        cursor: pointer;
+    }
+
+    .imgCard::after{
+        background-color: var(--backgroundColor);
+        position: absolute;
+        content: "";
+        height: 300px;
+        width: 100%;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        z-index: -1;
+    }
+
+    .imgCard__img{
+        width: 100%;
+        margin: 0 auto;
+        display: block;
+        background-color: var(--hoverColor);
+        transition: all .3s ease;
+        box-sizing: border-box;
+        min-height: auto ;
+    }
+
+    @media (max-width: 991.98px){
+        .imgCard__img{
+            min-height: auto;
+        }   
+    }
+  
+
+    .imgCard__description{
+        width: 100%;
+        margin: 0 auto;
+        color: var(--textColor);
+    }
+
+    i img{
+        width: 44px;
+    }
+</style>

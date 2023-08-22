@@ -1,0 +1,103 @@
+---
+import Border from "../components/Border.astro";
+import Button from "../components/Button.astro";
+export interface Props {
+  title: string;
+  text: string;
+  img: string;
+  date: string;
+  place: string;
+  href: string;
+}
+
+const { title, text, date, place, href, img  } = Astro.props;
+---
+  <div class="modal fade p-4 p-lg-0" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <Border style="border-2">
+        <div class="modal-content position-relative p-3">
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            <div class="modal-body">
+                <img class="modal__img w-100" src={img} alt="">
+
+                <div>
+                    <h1 class="modal-title fs-3 fw-bold" id="exampleModalLabel">{title}</h1>
+            
+                {text}
+                <div class="d-flex align-items-center gap-3 my-4">
+                    <i>
+                        <img class="modal__icon" src="assets/icon-date.png" alt="icon-date">
+                    </i>
+                    <p class="mb-0">
+                        {date}
+                    </p>
+                </div>
+                <div class="d-flex align-items-center gap-3 mb-4">
+                    <i>
+                        <img class="modal__icon" src="assets/icon-place.png" alt="icon-place">
+                    </i>
+                    <p class="mb-0">
+                        {place}
+                    </p>
+                </div>
+                <Button color="blue" text="Saver your Seat" href={href}/>
+                </div>
+            </div>
+          </div>
+      </Border>
+    </div>
+  </div>
+
+  <style is:global>
+
+
+    .modal-content{
+        border-radius: 0;
+    }
+
+    .modal__icon{
+        width: 48px;
+    }
+
+    .btn-close{
+        background-color: var(--blue);
+        position: absolute;
+        top: -6%;
+        right: -4%;
+        z-index: 1;
+        padding: 12px;
+        border-radius: 50%;
+        opacity: 1;
+        transition: all .3s ease;
+    }
+
+    @media (max-width: 991.98px){
+        .btn-close{
+        top: 0;
+        }
+    }
+
+    .btn-close:hover{
+        transition: all .3s ease;
+        filter: brightness(1.1);
+        opacity: 1;
+    }
+
+    .modal-body{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 2rem;
+    }
+
+    @media (max-width: 991.98px){
+        .modal-body{
+            display: grid;
+            grid-template-columns: 1fr;
+         }
+    }
+
+    .modal-dialog{
+        max-width: 720px;
+    }
+
+  </style>

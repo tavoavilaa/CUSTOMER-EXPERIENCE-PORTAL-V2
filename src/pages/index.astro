@@ -1,0 +1,162 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Button from "../components/Button.astro";
+import CardsGrid from "../components/CardsGrid.astro";
+---
+<Layout
+  title="Avaya"
+  description="Avaya."
+>
+<br><br>
+<section class="splide" aria-label="Splide Basic HTML Example" id="splideComplementary">
+  <div class="splide__track">
+    <ul class="splide__list">
+      <li class="splide__slide pb-5">
+        <header class="position-relative">
+          <div class="container border-1">
+           <div class="container bg-promo px-5 position-relative ">
+             <div class="row align-items-center">
+               <div class="col-12 col-lg-6 ">
+                 <div class="overlay">
+                  <h1 class="avaya-title text-uppercase">Avaya <br/> Customer <br/> Experiences</h1>
+                   <div>
+                     <p class="m-0 fs-5">
+                       With Avaya, there’s no limit to the experiences <br> we can create. Choose your experience below.
+                     </p>
+                   </div>
+                 </div>
+               </div>
+             </div>
+           </div>
+          </div>
+         </header>
+      </li>
+      <li class="splide__slide pb-5">
+        <header class="position-relative">
+          <div class="container border-1">
+           <div class="container bg-promo-2 px-5 position-relative ">
+             <div class="row align-items-center">
+               <div class="col-12 col-lg-6 ">
+                 <div class="overlay">
+                  <h1 class="avaya-title text-uppercase">Avaya <br/> Customer <br/> Experiences</h1>
+                   <div>
+                     <p class="m-0 fs-5">
+                       With Avaya, there’s no limit to the experiences <br> we can create. Choose your experience below.
+                     </p>
+                   </div>
+                 </div>
+               </div>
+             </div>
+           </div>
+          </div>
+         </header>
+      </li>
+    </ul>
+  </div>
+</section>
+
+
+
+<section class="mb-5">
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        <div class="my-5 pt-5">
+          <h2 class="text-black text-center fw-bold fs-1">
+            Choose Your Experience Below
+          </h2>
+        </div>
+      </div>
+    </div>
+      <div class="row justify-content-center">
+        <div class="col-12">
+          <CardsGrid/>
+          
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+
+
+</Layout>
+<style>
+
+.border-1 {
+        background-image: url("https://www.avaya.com/static/avaya/assets/images/homepage/Solutions-1-FRAME.jpg");
+        background-size: contain;
+        padding: 15px;
+    }
+
+  .bg-promo{
+    background-image: url('assets/header.jpg');
+    min-height: 500px;
+    background-size: cover;
+    background-position: right;
+  }
+
+  @media (max-width: 991.98px){
+  	.bg-promo{
+      background-position: top;
+      background-color: white;
+      background-size: contain;
+      background-repeat: no-repeat;
+    }
+  }
+
+  .bg-promo-2{
+    background-image: url('assets/header-2.jpg');
+    min-height: 500px;
+    background-size: cover;
+    background-position: right;
+  }
+
+  @media (max-width: 991.98px){
+  	.bg-promo-2{
+    background-position: top;
+    background-color: white;
+    background-size: contain;
+    background-repeat: no-repeat;
+    }
+  }
+
+
+  .overlay{
+    background: var(--white);
+    position: absolute;
+    left: 4%;
+    bottom: -15px;
+    padding: 3rem 6rem;
+  }
+
+  @media (max-width: 991.98px){
+    .overlay{
+    background: var(--white);
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 5%;
+    padding: 2rem;
+    }
+  }
+
+  .custom-bg {
+      background-color: var(--purple);
+    }
+
+  .avaya-pills{
+    border-bottom: 2px solid var(--purple);
+    padding-bottom: 0px;
+    width: 100%;
+    display: flex;
+    justify-content: start;
+  }
+
+</style>
+
+
+
+
